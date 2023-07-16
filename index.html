@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <h1>Closure</h1>
+    <hr>
+    <h2>Q.1 what is the output?</h2>
+    <pre>
+        "    function counter(){
+            var counter = 0;
+        
+            function IncreaseCounter() {
+                return counter += 1;
+            };
+        
+            return IncreaseCounter;
+        }
+        
+        var counter = counter();
+        alert(counter());
+        alert(counter());
+        alert(counter());
+        alert(counter());"
+
+        Ans= 
+             It will show alert one time that time alert is 1 ,
+             but second time function will run and than counter value
+              has been increase by 1 so that time counter value is 2
+              same thing in a third and for time alert show and counter 
+              value increaseby +1 .
+    </pre>
+    <hr>
+    <h2>Q.2 what is the output?</h2>
+    <pre>
+        "let count = 0;
+         (function () {
+            if (count === 0) {
+              let count = 1;
+               console.log(count); // What is logged?
+             }
+          console.log(count); // What is logged?
+          })();"
+
+
+    ans = 
+          output of the code is 1,0
+          because we have console count first inside the block and then we have console
+          the count in a functional scope so output is 0 from the global swcope.
+    </pre>
+    <hr>
+    <h2>Q.3 what is the output?</h2>
+    <pre>
+        "for (var i = 0; i < 3; i++) {
+            setTimeout(function log() {
+              console.log(i); // What is logged?
+            }, 1000);
+          }"
+
+
+    ans = 
+          first the for loop has been run and the value of i=" 3 " so in a setTimeout function it will run and console 3  and then itwill work so 
+          the oputput is 3 time 3 in a one second of time period.   
+    </pre>
+    <hr>
+    <h2>Q.4 Write a code to calculate area of a rectangle using inner function. In this case outer function should accept parameter length and inner function should accept parameter breadth.</h2>
+    <pre>Ans = 
+        function outer(length){
+     
+            function inner(breadth){
+                console.log(breadth*length)
+            }
+            inner(5)
+        }
+        outer(10)
+
+       When  outer() called so iside the length value is 10 
+       & inner() called so breadth = 5
+       and area of rectangle is = 50
+        
+       breadth*length 
+       5*10 = 50   
+    </pre>
+    <h2>Q.5 Take a variable in outer function and create an inner function to increase the counter every time it is called </h2>
+    <pre>
+     ans= 
+        function outer(){
+            let a = 0
+               function inner(){
+                  a++
+                console.log(a) 
+               }
+              return inner;
+           }
+           
+            let increament = outer()
+           
+           increament() = 1
+           increament()  = 2
+           increament() =  3
+           increament() = 4
+           increament() = 5
+           increament() =6
+         
+    </pre>
+    <hr>
+     <h2>Q.6 Print Output </h2>
+      <pre>
+    ans = 
+        var a = 12;
+        (function () {
+          alert(a);
+        })();
+
+        output is 12 in the alert windowe becaouse the variable 
+        is in global so we can see the alert in the window 
+        and "var" also has global scope.
+    </pre>
+    <hr>
+    <h2>Q.7 Print Output </h2>
+    <pre>
+        "var a = 10;
+        var x = (function () {
+          var a = 12;
+          return function () {
+            alert(a);
+          };
+        })();
+        x();"
+
+ ans=     output is 12 var a = redeclair inide the function
+          scope so alert prompt shown output is 12 
+        
+    </pre>
+
+      
+  
+    <script src="./script.js"></script>
+</body>
+ 
+</html>
